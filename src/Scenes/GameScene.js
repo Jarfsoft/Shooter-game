@@ -16,15 +16,9 @@ export default class GameScene extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32
     });
-    this.load.spritesheet("sprEnemy0", "../assets/sprEnemy0.png", {
-      frameWidth: 16,
-      frameHeight: 16
-    });
-    this.load.image("sprEnemy1", "../assets/sprEnemy1.png");
-    this.load.spritesheet("sprEnemy2", "../assets/sprEnemy2.png", {
-      frameWidth: 16,
-      frameHeight: 16
-    });
+    this.load.image("sprEnemy0", "../assets/gunEnemy.png");
+    this.load.image("sprEnemy1", "../assets/spinEnemy.png");
+    this.load.image("sprEnemy2", "../assets/2Enemy.png");
     this.load.image("sprLaserEnemy0", "../assets/sprLaserEnemy0.png");
     this.load.image("sprLaserPlayer", "../assets/sprLaserPlayer.png");
     this.load.image("sprPlayer", "../assets/Starfighter.png");
@@ -42,20 +36,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create () {
-    this.anims.create({
-      key: "sprEnemy0",
-      frames: this.anims.generateFrameNumbers("sprEnemy0"),
-      frameRate: 20,
-      repeat: -1
-    });
-
-    this.anims.create({
-      key: "sprEnemy2",
-      frames: this.anims.generateFrameNumbers("sprEnemy2"),
-      frameRate: 20,
-      repeat: -1
-    });
-
     this.anims.create({
       key: "sprExplosion",
       frames: this.anims.generateFrameNumbers("sprExplosion"),
