@@ -12,15 +12,15 @@ export default class GameScene extends Phaser.Scene {
 
   preload () {
     this.load.image("sprBg0", "../assets/cloud2.jpg");
-    this.load.spritesheet("sprExplosion", "../assets/sprExplosion.png", {
+    this.load.spritesheet("sprExplosion", "../assets/sprEpls.png", {
       frameWidth: 32,
       frameHeight: 32
     });
     this.load.image("sprEnemy0", "../assets/gunEnemy.png");
     this.load.image("sprEnemy1", "../assets/spinEnemy.png");
     this.load.image("sprEnemy2", "../assets/2Enemy.png");
-    this.load.image("sprLaserEnemy0", "../assets/sprLaserEnemy0.png");
-    this.load.image("sprLaserPlayer", "../assets/sprLaserPlayer.png");
+    this.load.image("sprLaserEnemy0", "../assets/bulletEnemy.png");
+    this.load.image("sprLaserPlayer", "../assets/bullet.png");
     this.load.image("sprPlayer", "../assets/Starfighter.png");
 
     this.load.audio("sndExplode0", "../assets/sndExplode0.wav");
