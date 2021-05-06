@@ -9,9 +9,6 @@ export default class TitleScene extends Phaser.Scene {
 
   preload() {
     this.load.image("sprBg0", "../assets/cloud2.jpg");
-    this.load.image("sprBtnPlay", "../assets/sprBtnPlay.png");
-    this.load.image("sprBtnPlayHover", "../assets/sprBtnPlayHover.png");
-    this.load.image("sprBtnPlayDown", "../assets/sprBtnPlayDown.png");
     this.load.image("sprBtnRestart", "../assets/sprBtnRestart.png");
     this.load.image("sprBtnRestartHover", "../assets/sprBtnRestartHover.png");
     this.load.image("sprBtnRestartDown", "../assets/sprBtnRestartDown.png");
