@@ -52,7 +52,7 @@ export default class GameScene extends Phaser.Scene {
     };
 
     this.backgrounds = [];
-    for (var i = 0; i < 1; i++) { // create five scrolling backgrounds
+    for (var i = 0; i < 1; i++) {
       var bg = new ScrollingBackground(this, "sprBg0", 1 * 10);
       this.backgrounds.push(bg);
     }
@@ -101,7 +101,7 @@ export default class GameScene extends Phaser.Scene {
     });
 
     this.time.addEvent({
-      delay: 1000, // this can be changed to a higher value like 1000
+      delay: 1000,
       callback: function() {
         var enemy = null;
 

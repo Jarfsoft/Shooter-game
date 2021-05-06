@@ -18,7 +18,6 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create () {
-    // Game
     this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
     this.centerButton(this.gameButton, 1);
 
@@ -29,7 +28,6 @@ export default class TitleScene extends Phaser.Scene {
       this.scene.start('Game');
     }.bind(this));
 
-    // Options
     this.optionsButton = this.add.sprite(300, 200, 'blueButton1').setInteractive();
     this.centerButton(this.optionsButton);
 
@@ -40,7 +38,6 @@ export default class TitleScene extends Phaser.Scene {
       this.scene.start('Options');
     }.bind(this));
 
-    // Credits
     this.creditsButton = this.add.sprite(300, 200, 'blueButton1').setInteractive();
     this.centerButton(this.creditsButton, -1);
 
@@ -59,7 +56,7 @@ export default class TitleScene extends Phaser.Scene {
       gameObjects[0].setTexture('blueButton1');
     });
 
-    this.title = this.add.text(this.game.config.width * 0.5, 128, "SPACE SHOOTER", {
+    this.title = this.add.text(this.game.config.width * 0.5, 128, "SHOOTER GAME", {
       fontFamily: 'monospace',
       fontSize: 48,
       fontStyle: 'bold',
