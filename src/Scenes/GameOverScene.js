@@ -11,7 +11,7 @@ export default class GameOverScene extends Phaser.Scene {
       fontFamily: 'monospace',
       fontSize: 48,
       fontStyle: 'bold',
-      color: '#ffffff',
+      color: 'green',
       align: 'center'
     });
     this.title.setOrigin(0.5);
