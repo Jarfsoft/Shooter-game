@@ -20,7 +20,6 @@ export default class GunShip extends Entity {
       callbackScope: this,
       loop: true
     });
-    this.play("sprEnemy0");
   }
 
   onDestroy() {
