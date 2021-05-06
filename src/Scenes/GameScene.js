@@ -23,9 +23,9 @@ export default class GameScene extends Phaser.Scene {
     this.load.image("sprLaserPlayer", "../assets/bullet.png");
     this.load.image("sprPlayer", "../assets/Starfighter.png");
 
-    this.load.audio("sndExplode0", "../assets/sndExplode0.wav");
-    this.load.audio("sndExplode1", "../assets/sndExplode1.wav");
-    this.load.audio("sndLaser", "../assets/sndLaser.wav");
+    this.load.audio("sndExplode0", "../assets/rumble.wav");
+    this.load.audio("sndExplode1", "../assets/explosion.wav");
+    this.load.audio("sndLaser", "../assets/laser8.wav");
 
     this.load.image("sprBtnPlay", "../assets/sprBtnPlay.png");
     this.load.image("sprBtnPlayHover", "../assets/sprBtnPlayHover.png");
