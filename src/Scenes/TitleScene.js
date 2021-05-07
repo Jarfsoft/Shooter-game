@@ -45,6 +45,16 @@ export default class TitleScene extends Phaser.Scene {
       this.scene.start('Credits');
     }.bind(this));
 
+    this.scoresButton = this.add.sprite(0, 0, 'blueButton1').setInteractive();
+    this.centerButton(this.scoresButton, -1);
+
+    this.scoresText = this.add.text(343, 485, 'Scores', { fontSize: '32px', fill: '#fff' });
+    this.centerButtonText(this.scoresButton, this.scoresText);
+
+    this.scoresButton.on('pointerdown', function (pointer) {
+      this.scene.start('HighScores');
+    }.bind(this));
+
     this.input.on('pointerover', function (event, gameObjects) {
       gameObjects[0].setTexture('blueButton2');
     });

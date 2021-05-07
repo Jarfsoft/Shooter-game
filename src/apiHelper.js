@@ -22,12 +22,21 @@ const postData = async(uName, score) => {
   }
 }
 
-const getData = async () => {
+export const getData = async () => {
+  const info = {
+    method: 'Get',
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  };
+
   try {
-    const req = await fetch(url);
+    const req = await fetch(url, info);
     const data = await req.json();
 
-    return data.result;
+    return data;
   } catch (error) {
     throw new Error(error);
   }
