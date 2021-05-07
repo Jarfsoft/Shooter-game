@@ -1,4 +1,5 @@
 import 'phaser';
+import postData from '../apiHelper';
 import ScrollingBackground from '../Entities/ScrollingBackground';
 
 export default class GameOverScene extends Phaser.Scene {
@@ -6,8 +7,12 @@ export default class GameOverScene extends Phaser.Scene {
     super({ key: "SceneGameOver" });
   }
 
+  init(score) {
+    this.score = score;
+  }
+
   create() {
-    this.title = this.add.text(this.game.config.width * 0.5, 128, "GAME OVER", {
+    this.title = this.add.text(this.game.config.width * 0.5, 128, `GAME OVER\nScore: ${this.score}`, {
       fontFamily: 'monospace',
       fontSize: 48,
       fontStyle: 'bold',
@@ -22,7 +27,20 @@ export default class GameOverScene extends Phaser.Scene {
       "sprBtnRestart"
     );
 
+    this.saveScore = this.add.sprite(
+      this.game.config.width * 0.5,
+      this.game.config.height * 0.6,
+      "blueButton1"
+    );
+    this.saveText = this.add.text(
+      0,
+      0,
+      'Save Score', { fontSize: '28px', fill: 'black'}
+    );
+    Phaser.Display.Align.In.Center(this.saveText, this.saveScore);
+
     this.btnRestart.setInteractive();
+    this.saveScore.setInteractive();
 
     this.btnRestart.on("pointerover", function() {
       this.btnRestart.setTexture("sprBtnRestartHover");
@@ -39,6 +57,11 @@ export default class GameOverScene extends Phaser.Scene {
     this.btnRestart.on("pointerup", function() {
       this.btnRestart.setTexture("sprBtnRestart");
       this.scene.start("Title");
+    }, this);
+
+    this.saveScore.on("pointerup", function() {
+      const user = prompt("Enter your name:","Name");
+      postData(user, this.score);
     }, this);
 
     this.backgrounds = [];

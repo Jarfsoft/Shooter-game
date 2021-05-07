@@ -33,6 +33,9 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create () {
+    let s = 0;
+    let sText = this;
+    sText.scoreText = sText.add.text(0, 0, `Score: ${s}`, { fontSize: '32px', fill: 'green' });
     this.anims.create({
       key: "sprExplosion",
       frames: this.anims.generateFrameNumbers("sprExplosion"),
@@ -78,6 +81,8 @@ export default class GameScene extends Phaser.Scene {
       
         enemy.explode(true);
         playerLaser.destroy();
+        s++;
+        sText.scoreText.setText(`Score: ${s}`);
       }
     });
     this.physics.add.overlap(this.player, this.enemies, function(player, enemy) {
@@ -85,7 +90,7 @@ export default class GameScene extends Phaser.Scene {
           !enemy.getData("isDead")) {
         player.explode(false);
         enemy.explode(true);
-        player.onDestroy();
+        player.onDestroy(s);
       }
     });
     this.physics.add.overlap(this.player, this.enemyLasers, function(player, laser) {
@@ -93,7 +98,7 @@ export default class GameScene extends Phaser.Scene {
           !laser.getData("isDead")) {
         player.explode(false);
         laser.destroy();
-        player.onDestroy();
+        player.onDestroy(s);
       }
     });
 
