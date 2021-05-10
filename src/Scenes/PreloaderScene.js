@@ -79,6 +79,8 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('phaserLogo', 'assets/dev.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
+
+    this.load.audio('gameMusic', '../assets/Rock_of_War.mp3');
   }
 
   ready () {

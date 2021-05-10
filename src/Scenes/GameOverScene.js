@@ -7,8 +7,11 @@ export default class GameOverScene extends Phaser.Scene {
     super({ key: "SceneGameOver" });
   }
 
-  init(score) {
-    this.score = score;
+  init(s) {
+    if(`${s}` === '[object Object]')
+      this.score = 0;
+    else
+      this.score = s;
   }
 
   create() {
@@ -61,7 +64,8 @@ export default class GameOverScene extends Phaser.Scene {
 
     this.saveScore.on("pointerup", function() {
       const user = prompt("Enter your name:","Name");
-      postData(user, this.score);
+      if(user !== null)
+        postData(user, this.score);
     }, this);
 
     this.backgrounds = [];

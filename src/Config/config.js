@@ -2,6 +2,7 @@ import 'phaser';
 
 export default {
   type: Phaser.WEBGL,
+  autoCenter: Phaser.Scale.CENTER_BOTH,
   width: 800,
   height: 600,
   backgroundColor: "black",

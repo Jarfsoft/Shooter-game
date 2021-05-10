@@ -26,6 +26,7 @@ export default class GameScene extends Phaser.Scene {
     this.load.audio("sndExplode0", "../assets/rumble.wav");
     this.load.audio("sndExplode1", "../assets/explosion.wav");
     this.load.audio("sndLaser", "../assets/laser8.wav");
+    this.load.audio('gameMusic', "../assets/Rock_of_War.mp3")
 
     this.load.image("sprBtnRestart", "../assets/sprBtnRestart.png");
     this.load.image("sprBtnRestartHover", "../assets/sprBtnRestartHover.png");
@@ -33,6 +34,10 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create () {
+    let music = this.gameMusic;
+    music = this.sound.add('gameMusic', { volume: 1, loop: true });
+    music.play();
+
     let s = 0;
     let sText = this;
     sText.scoreText = sText.add.text(0, 0, `Score: ${s}`, { fontSize: '32px', fill: 'green' });
@@ -90,6 +95,7 @@ export default class GameScene extends Phaser.Scene {
           !enemy.getData("isDead")) {
         player.explode(false);
         enemy.explode(true);
+        music.stop();
         player.onDestroy(s);
       }
     });
@@ -98,6 +104,7 @@ export default class GameScene extends Phaser.Scene {
           !laser.getData("isDead")) {
         player.explode(false);
         laser.destroy();
+        music.stop();
         player.onDestroy(s);
       }
     });
