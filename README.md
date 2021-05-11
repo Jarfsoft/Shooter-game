@@ -96,7 +96,7 @@ You can play and check the game in this link:
 👤  **Juan Raudales**
 
 - GitHub: [@Jarfsoft](https://github.com/Jarfsoft)
-- Twitter: [@Jarfsoft](https://twitter.com/alejot)
+- Twitter: [@Jarfsoft](https://twitter.com/Jarfsoft)
 - LinkedIn: [Juan Raudales](https://www.linkedin.com/in/juan-raudales-flores-7b0a3b113/)
 
 ## 🤝 Contributing
