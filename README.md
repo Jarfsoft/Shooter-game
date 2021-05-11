@@ -88,7 +88,7 @@ The app is deployed using the gh-pages settings:
 
 You can play and check the game in this link:
 
-[Live Demo Link]()
+[Live Demo Link](https://shooter-game-jarfsoft.netlify.app/)
 
 
 ## Authors
