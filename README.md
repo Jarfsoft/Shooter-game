@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Capstone-space-shooter-game-js
+# Shooter-game-js
 
 This is a game developed as a final project to complete the JavaScript Module. It is a shooter game build entirely with JavaScript and it uses Phaser 3 dependency. The score feature uses an API.
 
