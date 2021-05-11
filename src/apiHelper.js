@@ -1,8 +1,8 @@
 const fetch = require('node-fetch');
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/SDrgsSDf3DFWdvsd/scores/'
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/SDrgsSDf3DFWdvsd/scores/';
 
-const postData = async(uName, score) => {
+export const postData = async (uName, score) => {
   fetch(url, {
     method: 'POST',
     mode: 'cors',
@@ -10,8 +10,8 @@ const postData = async(uName, score) => {
       Accept: 'Application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({user: uName, score})
-  })
+    body: JSON.stringify({ user: uName, score }),
+  });
 
   try {
     const postRequest = await fetch(url, postData);
@@ -20,7 +20,7 @@ const postData = async(uName, score) => {
   } catch (error) {
     throw new Error(`The following error prevented the action: ${error}`);
   }
-}
+};
 
 export const getData = async () => {
   const info = {

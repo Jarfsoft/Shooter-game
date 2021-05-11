@@ -53,7 +53,7 @@ To get a local copy up and follow these simple example steps.
 
 - Then, go to the folder created with:
 
-`cd shooter-game-js`
+`cd Shooter-game-js`
 
 
 ### Install

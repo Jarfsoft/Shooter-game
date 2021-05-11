@@ -1,10 +1,10 @@
-import 'phaser';
-import getData from '../apiHelper';
+import Phaser from 'phaser';
+import { getData as onlineData } from '../apiHelper';
 import ScrollingBackground from '../Entities/ScrollingBackground';
 
 export default class HighScoresScene extends Phaser.Scene {
   constructor() {
-    super({ key: "HighScores" });
+    super({ key: 'HighScores' });
   }
 
   create() {
@@ -13,11 +13,11 @@ export default class HighScoresScene extends Phaser.Scene {
       fontSize: 48,
       fontStyle: 'bold',
       color: 'green',
-      align: 'center'
+      align: 'center',
     });
     this.title.setOrigin(0.5);
 
-    getData().then(data => {
+    onlineData().then((data) => {
       data.result.sort((a, b) => b.score - a.score)
         .slice(0, 6)
         .map((game, i) => {
@@ -36,35 +36,35 @@ export default class HighScoresScene extends Phaser.Scene {
     this.btnRestart = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.9,
-      "sprBtnRestart"
+      'sprBtnRestart',
     );
 
     this.btnRestart.setInteractive();
 
-    this.btnRestart.on("pointerout", function() {
-      this.setTexture("sprBtnRestart");
+    this.btnRestart.on('pointerout', () => {
+      this.setTexture('sprBtnRestart');
     });
 
-    this.btnRestart.on("pointerdown", function() {
-      this.btnRestart.setTexture("sprBtnRestartDown");
+    this.btnRestart.on('pointerdown', () => {
+      this.btnRestart.setTexture('sprBtnRestartDown');
     }, this);
 
-    this.btnRestart.on("pointerup", function() {
-      this.btnRestart.setTexture("sprBtnRestart");
-      this.scene.start("Title");
+    this.btnRestart.on('pointerup', () => {
+      this.btnRestart.setTexture('sprBtnRestart');
+      this.scene.start('Title');
     }, this);
 
     this.backgrounds = [];
-    for (var i = 0; i < 1; i++) {
-      var keys = ["sprBg0"];
-      var key = keys[Phaser.Math.Between(0, keys.length - 1)];
-      var bg = new ScrollingBackground(this, key, 1 * 10);
+    for (let i = 0; i < 1; i += 1) {
+      const keys = ['sprBg0'];
+      const key = keys[Phaser.Math.Between(0, keys.length - 1)];
+      const bg = new ScrollingBackground(this, key, 1 * 10);
       this.backgrounds.push(bg);
     }
   }
 
   update() {
-    for (var i = 0; i < this.backgrounds.length; i++) {
+    for (let i = 0; i < this.backgrounds.length; i += 1) {
       this.backgrounds[i].update();
     }
   }
