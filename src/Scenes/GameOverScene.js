@@ -51,7 +51,9 @@ export default class GameOverScene extends Phaser.Scene {
     }, t);
 
     this.saveScore.on('pointerup', () => {
+      /* eslint-disable no-alert */
       const user = prompt('Enter your name:', 'Name');
+      /* eslint-enable no-alert */
       if (user !== null) saveOnline(user, t.score);
     }, t);
 

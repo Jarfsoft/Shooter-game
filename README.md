@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Shooter-game-js
+# Shooter-game
 
 This is a game developed as a final project to complete the JavaScript Module. It is a shooter game build entirely with JavaScript and it uses Phaser 3 dependency. The score feature uses an API.
 
@@ -10,7 +10,7 @@ This is a game developed as a final project to complete the JavaScript Module. I
 
 **Use W, A, S, D keys to move and to shoot press the SPACE key.**
 
-**Every enemy you destroy will add a point. In gameover scene, you will be able to save your score with your name.**
+**Every enemy you destroy will add a point. In game over scene, you will be able to save your score with your name.**
 
 ## Built With
 
@@ -25,19 +25,17 @@ This is a game developed as a final project to complete the JavaScript Module. I
 - Eslint
 - Stylelint
 
-All assets as images, sounds and music from OpenGameArt.org.
-You can see all the arts for this game at this link:
+All assets like images, sounds and music are from OpenGameArt.org.
 
-[Project Assets](https://opengameart.org/content/space-shooter-redux)
+[OpenGameArt](https://opengameart.org/)
 
 ## Live Demo - Try the game here
 
-
-
+[Live Demo Link](https://shooter-game-jarfsoft.netlify.app/)
 
 ## Getting Started
 
-To get a local copy up and follow these simple example steps.
+To get a local copy follow up these simple example steps.
 
 ### Prerequisites
 
@@ -53,7 +51,7 @@ To get a local copy up and follow these simple example steps.
 
 - Then, go to the folder created with:
 
-`cd Shooter-game-js`
+`cd Shooter-game`
 
 
 ### Install
@@ -74,22 +72,13 @@ You will see that your web browser open a tab and then the game is playable.
 
 ### Alternative for using the game in a local environment
 
-After installing all the dependencies with `npm install`, you can run the command `npm run start`, with this, you will compile the code and the game will be ready to play opening the browser with this address. `http://localhost:8000`.
+After installing all the dependencies with `npm install`, you can use the server you like to load the game. In VS code you can download the extension `Live Server` by ` Ritwick Dey` and load the index.html file that is in the root of the project. The button `Go Live` will be in the lower right corner of the window.
 
 ### Run tests
 
 To run the test implemented for the game, please run this command:
 
 `npm run test`
-
-### Deployment
-
-The app is deployed using the gh-pages settings:
-
-You can play and check the game in this link:
-
-[Live Demo Link](https://shooter-game-jarfsoft.netlify.app/)
-
 
 ## Authors
 
@@ -116,4 +105,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is MIT licensed.

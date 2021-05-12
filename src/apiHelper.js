@@ -2,7 +2,10 @@ const fetch = require('node-fetch');
 
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/SDrgsSDf3DFWdvsd/scores/';
 
-export const postData = async (uName, score) => {
+export const postData = async (uName, uScore) => {
+  let s;
+  if (uScore === 0) s = '0';
+  else s = uScore;
   fetch(url, {
     method: 'POST',
     mode: 'cors',
@@ -10,7 +13,7 @@ export const postData = async (uName, score) => {
       Accept: 'Application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ user: uName, score }),
+    body: JSON.stringify({ user: uName, score: s }),
   });
 
   try {
